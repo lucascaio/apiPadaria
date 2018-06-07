@@ -22,7 +22,7 @@ Route::group(['middleware'=>'api', 'prefix'=>'auth'], function($router) {
     Route::resource('/anuncio', 'AnuncioController')->only(['index', 'store', 'update', 'destroy']);
     Route::resource('/fornada', 'FornadaController')->only(['index', 'store', 'update', 'destroy']);
     Route::resource('/pedido', 'PedidoController')->only(['index', 'store', 'update', 'destroy']);
-    Route::resource('/perfil', 'PerfilController')->only(['index', 'store', 'update', 'destroy']);
+    Route::resource('perfil', 'PerfilController')->only(['index', 'store', 'update', 'destroy']);
     Route::resource('/pessoa', 'PessoaController')->only(['index', 'store', 'update', 'destroy']);
     Route::resource('/produto', 'ProdutoController')->only(['index', 'store', 'update', 'destroy']);
     Route::resource('/produto_pedido', 'ProdutoPedidoController')->only(['index', 'store', 'update', 'destroy']);
