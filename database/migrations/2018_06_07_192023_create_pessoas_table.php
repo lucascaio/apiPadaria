@@ -17,7 +17,6 @@ class CreatePessoasTable extends Migration
             $table->increments('id');
             $table->string('nome', '70');
             $table->unsignedInteger('perfil_id');
-            $table->string('senha', '60');
             $table->timestamps();
             $table->foreign('perfil_id', 'fk_pessoa_perfil_id')->references('id')->on('perfils');
         });

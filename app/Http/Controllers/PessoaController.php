@@ -74,7 +74,6 @@ class PessoaController extends Controller
     {
         $pessoa->nome = $request->nome;
         $pessoa->email = $request->email;
-        $pessoa->senha = $request->senha;
         $pessoa->perfil_id = $request->perfil_id;
         $pessoa->save();
 

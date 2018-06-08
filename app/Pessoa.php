@@ -10,7 +10,7 @@ class Pessoa extends Model
 
     protected $dates = ['created_at', 'updated_at'];
 
-    protected $fillable = ['nome', 'email', 'senha', 'perfil_id'];
+    protected $fillable = ['nome', 'email', 'perfil_id'];
 
     public function perfil()
 {
