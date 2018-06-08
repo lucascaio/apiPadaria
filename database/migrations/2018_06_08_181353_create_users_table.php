@@ -18,7 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->unsignedInteger('pessoa_id');
             $table->rememberToken();
+            $table->foreign('pessoa_id', 'fk_user_pessoa_id')->references('id')->on('pessoas');
             $table->timestamps();
         });
     }

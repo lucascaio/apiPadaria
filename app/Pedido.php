@@ -9,7 +9,13 @@ class Pedido extends Model
 
     protected $dates = ['created_at', 'updated_at'];
 
+    protected $fillable = ['pessoa_id', 'total_pago', 'total_receber'];
+
     public function pessoa(){
         return $this->hasOne(Pessoa::class);
+    }
+
+    public function produto(){
+        return $this->hasMany(Produto::class);
     }
 }

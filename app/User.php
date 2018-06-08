@@ -15,9 +15,7 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = [ 'name', 'email', 'password', 'pessoa_id'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -27,6 +25,10 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function pessoa(){
+        return $this->hasOne(Pessoa::class);
+    }
 
     public function getJWTIdentifier() {
         return $this->getKey();
