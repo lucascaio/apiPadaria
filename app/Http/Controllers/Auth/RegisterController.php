@@ -53,6 +53,7 @@ n void
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'pessoa_id'=>'required'
         ]);
     }
 
@@ -67,6 +68,7 @@ n void
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'pessoa_id' => $data['pessoa_id'],
             'password' => Hash::make($data['password']),
         ]);
     }

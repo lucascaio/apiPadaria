@@ -29,3 +29,4 @@ Route::resource('/produto', 'ProdutoController')->only(['index', 'store', 'updat
 Route::resource('/produto_pedido', 'ProdutoPedidoController')->only(['index', 'store', 'update', 'destroy']);
 Route::resource('/produto_tipo', 'ProdutoTipoController')->only(['index', 'store', 'update', 'destroy']);
 Route::resource('/promocao', 'PromocaoController')->only(['index', 'store', 'update', 'destroy']);
+Route::post('/user', 'Auth\RegisterController@create')->name('user.create');
