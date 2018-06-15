@@ -18,14 +18,13 @@ class CreateProdutosTable extends Migration
             $table->string('descricao', '70');
             $table->decimal('preco', 6,2);
             $table->integer('quantidade')->nullable();
-            $table->unsignedInteger('pessoa_id');
+            $table->unsignedInteger('user_id');
             $table->timestamp('data_validade')->nullable();
             $table->timestamp('data_fabricacao')->nullable();
             $table->decimal('peso')->nullable();
             $table->timestamps();
             $table->unsignedInteger('tipo_id');
-            $table->foreign('pessoa_id', 'fk_produto_pessoa_id')->references('id')->on('pessoas');
-            $table->foreign('tipo_id', 'fk_tipo_id')->references('id')->on('tipos');
+
         });
     }
 

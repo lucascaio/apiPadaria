@@ -35,7 +35,7 @@ class RegisterController extends Controller
      * Create a new controller instance.
      *
      * @retur
-n void
+    n void
      */
     public function __construct()
     {
@@ -45,7 +45,7 @@ n void
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -53,26 +53,25 @@ n void
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'pessoa_id'=>'required'
+            'password' => 'required|string|min:6|confirmed'
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(Request $request)
     {
         $data = $request->json()->all();
-        
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'pessoa_id' => $data['pessoa_id'],
             'password' => Hash::make($data['password']),
+            'perfil_id' => $data['perfil_id']
         ]);
     }
 }

@@ -17,9 +17,9 @@ class CreateFornadasTable extends Migration
             $table->increments('id');
             $table->timestamp('data_inicio')->nullable();
             $table->timestamp('data_fim')->nullable();
-            $table->unsignedInteger('pessoa_id');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
-            $table->foreign('pessoa_id', 'fk_fornada_pessoa_id')->references('id')->on('pessoas');
+
         });
     }
 

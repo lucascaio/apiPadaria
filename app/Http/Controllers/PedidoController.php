@@ -73,7 +73,7 @@ class PedidoController extends Controller
      */
     public function update(Request $request, Pedido $pedido)
     {
-        $pedido->pessoa_id = $request->pessoa_id;
+        $pedido->user_id = $request->user_id;
         $pedido->save();
 
         return response()->json(compact('pedido'));

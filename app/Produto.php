@@ -9,7 +9,7 @@ class Produto extends Model
 
     protected $dates = ['created_at', 'updated_at'];
 
-    protected $fillable = ['descricao', 'estoque', 'preco', 'quantidade', 'data_validade', 'data_fabricacao', 'peso', 'pessoa_id', 'tipo_id'];
+    protected $fillable = ['descricao', 'estoque', 'preco', 'quantidade', 'data_validade', 'data_fabricacao', 'peso', 'user_id', 'tipo_id'];
 
     public function pessoa(){
         return $this->hasOne(Pessoa::class);
