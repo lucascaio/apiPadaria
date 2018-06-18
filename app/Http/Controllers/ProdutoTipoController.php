@@ -35,6 +35,17 @@ class ProdutoTipoController extends Controller
      */
     public function store(Request $request)
     {
+//        $data = $request->json()->all();
+//
+//        return User::create([
+//            'name' => $data['name'],
+//            'email' => $data['email'],
+//            'password' => Hash::make($data['password']),
+//            'perfil_id' => $data['perfil_id']
+//        ]);
+
+
+
         $produtoTipo = new ProdutoTipo($request->all());
         $produtoTipo->save();
 

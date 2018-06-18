@@ -11,8 +11,8 @@ class Produto extends Model
 
     protected $fillable = ['descricao', 'estoque', 'preco', 'quantidade', 'data_validade', 'data_fabricacao', 'peso', 'user_id', 'tipo_id'];
 
-    public function pessoa(){
-        return $this->hasOne(Pessoa::class);
+    public function user(){
+        return $this->hasOne(User::class);
     }
 
     public function produto_tipo(){

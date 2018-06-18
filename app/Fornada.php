@@ -11,7 +11,7 @@ class Fornada extends Model
 
     protected $fillable = ['data_inicio', 'data_fim', 'user_id'];
 
-    public function pessoa(){
-        return $this->hasOne(Pessoa::class);
+    public function user(){
+        return $this->hasOne(User::class);
     }
 }

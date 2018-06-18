@@ -11,8 +11,8 @@ class Pedido extends Model
 
     protected $fillable = ['user_id', 'total_pago', 'total_receber'];
 
-    public function pessoa(){
-        return $this->hasOne(Pessoa::class);
+    public function user(){
+        return $this->hasOne(User::class);
     }
 
     public function produto(){
