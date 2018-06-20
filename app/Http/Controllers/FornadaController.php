@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Fornada;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FornadaController extends Controller
 {
@@ -85,10 +86,20 @@ class FornadaController extends Controller
      * @param  \App\Fornada  $fornada
      * @return \Illuminate\Http\Response
      */
+
     public function destroy(Fornada $fornada)
     {
         $fornada->delete();
 
         return response()->json(['status' => true, 'message' => 'A fornada foi deletada.']);
+    }
+
+    public function lastFornada(){
+//        $fornada = DB::table('fornadas')->first();
+        $fornada = DB::table('fornadas')
+            ->orderByRaw('id DESC')
+            ->first();
+
+        return response()->json(compact('fornada'));
     }
 }
