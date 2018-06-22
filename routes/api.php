@@ -18,6 +18,22 @@ Route::group(['middleware'=>'api', 'prefix'=>'auth'], function($router) {
     Route::post('refresh','AuthController@refresh');
     Route::post('me','AuthController@me');
 });
+//Route::group(['middleware' => 'jwt.auth'], function($router) {
+//    Route::resource('/anuncio', 'AnuncioController')->only(['index', 'store', 'update', 'destroy']);
+//    Route::resource('/fornada', 'FornadaController')->only(['index', 'store', 'update', 'destroy', 'lastFornada']);
+//    Route::resource('/pedido', 'PedidoController')->only(['index', 'store', 'update', 'destroy']);
+//    Route::resource('/perfil', 'PerfilController')->only(['index', 'store', 'update', 'destroy']);
+//    Route::resource('/pessoa', 'PessoaController')->only(['index', 'store', 'update', 'destroy']);
+//    Route::resource('/produto', 'ProdutoController')->only(['index', 'store', 'update', 'destroy']);
+//    Route::resource('/produto_pedido', 'ProdutoPedidoController')->only(['index', 'store', 'update', 'destroy']);
+//    Route::resource('/produto_tipo', 'ProdutoTipoController')->only(['index', 'store', 'update', 'destroy']);
+//    Route::resource('/promocao', 'PromocaoController')->only(['index', 'store', 'update', 'destroy']);
+//    Route::post('/user', 'Auth\RegisterController@create')->name('user.create');
+//    Route::get('/lastfornada', 'FornadaController@lastFornada')->name('fornada.lastFornada');
+//});
+
+
+
 
 Route::resource('/anuncio', 'AnuncioController')->only(['index', 'store', 'update', 'destroy']);
 Route::resource('/fornada', 'FornadaController')->only(['index', 'store', 'update', 'destroy', 'lastFornada']);
@@ -30,5 +46,6 @@ Route::resource('/produto_tipo', 'ProdutoTipoController')->only(['index', 'store
 Route::resource('/promocao', 'PromocaoController')->only(['index', 'store', 'update', 'destroy']);
 Route::post('/user', 'Auth\RegisterController@create')->name('user.create');
 Route::get('/lastfornada', 'FornadaController@lastFornada')->name('fornada.lastFornada');
+Route::get('/lastpedido', 'PedidoController@lastPedido')->name('pedido.lastPedido');
 
 

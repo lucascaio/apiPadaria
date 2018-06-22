@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pedido;
 use App\Perfil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {
@@ -90,5 +91,13 @@ class PedidoController extends Controller
         $pedido->delete();
 
         return response()->json(['status' => true, 'message' => 'O pedido foi removido.']);
+    }
+
+    public function lastPedido(){
+        $pedido = DB::table('pedidos')
+            ->orderByRaw('id DESC')
+            ->first();
+
+        return response()->json(compact('pedido'));
     }
 }
